@@ -68,7 +68,7 @@ basicCC <- ggplot(dd2,aes(x=race,y=prcnt*100,fill=cappun))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-From this plot, the white race is more strongly in favor of capital punishment compared to the other races. This is due to the red bar plot being a bit higher than the blue bar numerically in 2 out of the 3 scenarios. 2/3 is .66 so it's majority of the scenarios. 
+From this plot, the white race is more strongly in favor of capital punishment compared to the other races. This is due to it's red bar plot (in favor) being much higher than it's bar that isn't in favor. Its in favor bar goes over 60%. That's much higher than the other two options presented. The Whites bar against the punishment is also the lowest out of all 3. In both aspects, White is most in favor. 
 
 ### Numerical Descriptive Results
 
@@ -86,7 +86,7 @@ colPerc(table2)
 ```
 
 
-The white race has a higher rate in favor compared to any of the others. It's close to 68% in favor compared to the 46% in favor for African Americans. The white percentage in favor is 14% greater than the African American rate. 
+The white race has a higher rate in favor compared to any of the others. It's close to 68% in favor compared to the 46% in favor for African Americans. The white percentage in favor is 14% greater than the African American rate & is 12% greater than the other races rate. There's clearly a difference and the White continue to be most in favor. 
 
 
 ## Inferential Results
@@ -112,7 +112,7 @@ The p-value for the chi-squared test was .00000000000002033. The p-value is very
 fisherXY(mydata$cappun,mydata$race)
 ```
  
-The p-value for black vs other race is 0.02479 so regardless, both p-values given are different. 
+The p-value for black vs other race is 0.02479 so regardless, both p-values given are different. The contingency table only further proves that there is a difference. 
 
 # Discussion and Conclusion
 
