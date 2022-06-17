@@ -32,7 +32,7 @@ $H_A$: Attitude toward capital punishment is dependent on race. Different races 
 
 # Methods
 
-Both race and cappun are categorical variables so the analysis technique is CAT~CAT; plot is a bar plot, summary is a cross-table, inference is a chi-squared test. We are going to use CAT vs CAT strategies. 
+Both race and cappun are categorical variables so the analysis technique is CAT~CAT; plot is a bar plot, summary is a cross-table, inference is a chi-squared test. We are going to use CAT vs CAT strategies since it'll be most effective comparing race vs their opinion on capital punishment. 
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
@@ -68,7 +68,7 @@ basicCC <- ggplot(dd2,aes(x=race,y=prcnt*100,fill=cappun))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-From this plot, the white race is more strongly in favor of capital punishment compared to the other races. This is due to the red bar plot being a bit higher than the blue bar numerically. 
+From this plot, the white race is more strongly in favor of capital punishment compared to the other races. This is due to the red bar plot being a bit higher than the blue bar numerically in 2 out of the 3 scenarios. 2/3 is .66 so it's majority of the scenarios. 
 
 ### Numerical Descriptive Results
 
@@ -105,11 +105,17 @@ fisher.test(table2)
 #fisherXY(mydata$race,mydata$cappun)
 ```
 
+The p-value for the chi-squared test was .00000000000002033. The p-value is very small so we reject the null hypotheses. We reject it because both p-values are way smaller than .05. The p-value for black vs other race is 0.02479 so regardless, both p-values given are different. 
+
+
 ```{r}
 fisherXY(mydata$cappun,mydata$race)
 ```
  
+The p-value for black vs other race is 0.02479 so regardless, both p-values given are different. 
 
 # Discussion and Conclusion
+
+Our question was whether or not different races had different opinions on capital punishment. We stated that both values are categorical so we worked around it. We used a bar plot, a table, and a chi-squared test. From the following, we learned that there is a difference. Both our p-values were below .05. The white race was way more in favor of capital punishment compared  to any other race by 14%. Thus, we rejected the null hypotheses due to there being way too much evidence against the claim that there was no correlation between race & their opinions. 
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
